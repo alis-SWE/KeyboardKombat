@@ -1,0 +1,23 @@
+@import "./variables";
+
+@mixin tablet {
+    @media screen
+    and (min-width: $tablet-breakpoint)
+    and (max-width: $desktop-breakpoint) {
+      @content;
+    }
+  }
+  
+  @mixin desktop {
+    @media screen
+    and (min-width: $desktop-breakpoint) 
+    and (max-width: $bigdesktop-breakpoint) {
+      @content;
+    }
+  }
+  
+  @mixin font-style($size, $line-height, $weight) {
+    font-size: $size;
+    line-height: $line-height;
+    font-weight: $weight;
+  }
