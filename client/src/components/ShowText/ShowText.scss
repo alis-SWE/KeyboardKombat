@@ -1,0 +1,12 @@
+@import "/src/styles/partials/variables";
+@import "/src/styles/partials/mixins";
+
+.text {
+    &__typed-correctly {
+        background-color: rgb(0, 255, 0);
+    }
+
+    &__current {
+        text-decoration: underline;
+    }
+}
