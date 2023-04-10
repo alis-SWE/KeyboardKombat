@@ -1,2 +1,8 @@
 @import "/src/styles/partials/variables";
 @import "/src/styles/partials/mixins";
+
+
+.home {
+    display: flex;
+    flex-direction: column;
+}
