@@ -1,0 +1,8 @@
+@import "/src/styles/partials/variables";
+@import "/src/styles/partials/mixins";
+
+
+.join {
+    display: flex;
+    flex-direction: column;
+}
