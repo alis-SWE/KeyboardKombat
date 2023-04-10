@@ -1,3 +1,5 @@
+import './Practice.scss';
+
 const Practice = () => {
     return ( 
         <div className="practice">
