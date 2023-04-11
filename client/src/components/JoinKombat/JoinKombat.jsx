@@ -30,7 +30,7 @@ const JoinKombat = () => {
                     <button className="join__form__button__join" type="submit">
                         JOIN KOMBAT
                     </button>
-                    <Link className="join__form__button__cancel" to={'/kombat'}>
+                    <Link className="join__form__button__cancel" to={'/'}>
                         CANCEL
                     </Link>
                 </div>

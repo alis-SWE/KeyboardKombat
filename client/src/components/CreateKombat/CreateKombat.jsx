@@ -27,7 +27,7 @@ const CreateKombat = () => {
                     <button className="create__form__button__create" type="submit">
                         Create Kombat
                     </button>
-                    <Link className="create__form__button__cancel" to={'/kombat'}>
+                    <Link className="create__form__button__cancel" to={'/'}>
                         Cancel
                     </Link>
                 </div>

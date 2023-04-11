@@ -12,7 +12,7 @@
         margin-top: 3rem;
         margin-bottom: 0.5rem;
         font-size: 1.7rem;
-        padding-right: 10rem;
+        padding-right: 11.8rem;
     }
 
     &__form{ 
@@ -45,7 +45,6 @@
                 &:focus {
                     border: 2px solid $Kombat-Blue;
                     outline: none;
-                    // border-color: rgb(26, 137, 216);
                 }
             }
 
@@ -71,7 +70,6 @@
                 &:focus {
                     border: 2px solid $Kombat-Blue;
                     outline: none;
-                    // border-color: rgb(26, 137, 216);
                 }
             }
         }

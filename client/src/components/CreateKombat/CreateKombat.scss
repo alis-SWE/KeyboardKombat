@@ -47,7 +47,6 @@
                 &:focus {
                     border: 2px solid $Kombat-Blue;
                     outline: none;
-                    // border-color: rgb(26, 137, 216);
                 }
                 
             }
@@ -75,7 +74,6 @@
                     outline: none;
                     cursor: pointer;
                 }
-                
             }
 
             &__cancel {
@@ -90,7 +88,6 @@
                 color: $Kombat-LightBlue;
                 border-radius: 0.25rem;
                 text-decoration: none;
-        
         
                 &:hover,
                 &:focus {
