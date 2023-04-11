@@ -1,43 +1,104 @@
-import { useState } from 'react';
-import './JoinKombat.scss';
-import { Link } from 'react-router-dom';
-import socket from '../../socketConfig';
+@import "/src/styles/partials/variables";
+@import "/src/styles/partials/mixins";
+@import "/src/styles/partials/global";
+@import "/src/styles/partials/typography";
 
-const JoinKombat = () => {
-    const [input, setInput] = useState({kombatID: "", name: ""});
+.create {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
 
-    const handleChange = (event) => {
-        setInput({...input, [event.target.name]: event.target.value});
+    &__header {
+        margin-top: 3rem;
+        margin-bottom: 0.5rem;
+        font-size: 1.7rem;
+        padding-right: 10rem;
     }
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log(input);
-        socket.emit("join-kombat", input);
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__input {
+            display: flex;
+            flex-direction: column;
+
+            &__name-label {
+                font-size: 1.2rem;
+            }
+
+            &__name {
+                width: 335px;
+                border: 2px solid $Kombat-DarkBlue;
+                outline: none;
+                border-radius: 5px;
+                background-color: $Kombat-BackgroundColor;
+                color: $Kombat-LightBlue;
+                font-size: 1.2rem;
+                font-family: inherit;
+
+                &::placeholder {
+                    color: $Kombat-LightBlue;
+                }
+
+                &:focus {
+                    border: 2px solid $Kombat-Blue;
+                    outline: none;
+                    // border-color: rgb(26, 137, 216);
+                }
+                
+            }
+        }
+
+        &__button {
+            margin-top: 1rem;
+
+            &__create {
+                background-color: $Kombat-DarkBlue;
+                width: 200px;
+                height: 45px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.2rem;
+                border: none;
+                border-radius: 0.25rem;
+                color: $Kombat-LightBlue;
+
+                &:hover,
+                &:focus {
+                    background-color: $Kombat-Blue;
+                    color: $Kombat-Beige;
+                    outline: none;
+                    cursor: pointer;
+                }
+                
+            }
+
+            &__cancel {
+                margin-left: 1rem;
+                width: 125px;
+                height: 45px;
+                font-size: 1.2rem;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                background-color: $Kombat-DarkBlue;
+                color: $Kombat-LightBlue;
+                border-radius: 0.25rem;
+                text-decoration: none;
+        
+        
+                &:hover,
+                &:focus {
+                    background-color: $Kombat-Red;
+                    color: $Kombat-Beige;
+                    outline: none;
+                }
+            }
+        }
     }
-
-    return (
-        <div className="join">
-            <h2 className="join__header">Join Kombat</h2>
-            <form className="join__form" onSubmit={handleSubmit}>
-                <div className="join__form__input">
-                    <label htmlFor="name" className="join__form__input__name-label">Name</label>
-                    <input type="text" className="join__form__input__name" id="name" name="name" value={input.name} onChange={handleChange} placeholder='Enter your name' required/>
-                    <label htmlFor="kombatID" className="join__form__input__join-label">Kombat ID</label>
-                    <input type="text" className="join__form__input__join" id="kombatID" name="kombatID" value={input.kombatID} onChange={handleChange} placeholder='Enter Kombat ID' required/>
-                </div>
-                <div className="join__form__button">
-                    <button className="join__form__button__join" type="submit">
-                        JOIN KOMBAT
-                    </button>
-                    <Link className="join__form__button__cancel" to={'/kombat'}>
-                        CANCEL
-                    </Link>
-                </div>
-            </form>
-        </div> 
-
-    );
 }
- 
-export default JoinKombat;
