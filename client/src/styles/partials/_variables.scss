@@ -1,6 +1,13 @@
+$Kombat-BackgroundColor : rgb(27, 32, 40);
+$Kombat-Blue : rgb(26, 137, 216);
+$Kombat-DarkBlue : rgb(7, 55, 88);
+$Kombat-LightBlue : rgb(127, 182, 255);
+$Kombat-Beige : rgb(252, 234, 213);
+$Kombat-Red : rgb(255, 0, 0);
 
 
 // Media Query Breakpoints
-$tablet-breakpoint: 48rem; // 768px
-$desktop-breakpoint: 64rem; // 1024px
-$bigdesktop-breakpoint: 240rem; //3840px
+$tablet-breakpoint: 48rem; //768px
+$desktop-breakpoint: 64rem; //1024px
+$fulldesktop-breakpoint: 120rem; //1920px
+$ultradesktop-breakpoint: 240rem; //3840px
