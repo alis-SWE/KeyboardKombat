@@ -1,0 +1,63 @@
+@import "/src/styles/partials/variables";
+@import "/src/styles/partials/mixins";
+@import "/src/styles/partials/global";
+@import "/src/styles/partials/typography";
+
+.kombat {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-basis: auto;
+    justify-content: center;
+    align-items: center;
+
+    &__header {
+        font-size: 1.5rem;
+    }
+
+    &__create {
+        width: 165px;
+        height: 35px;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $Kombat-DarkBlue;
+        color: $Kombat-LightBlue;
+        border-radius: 0.25rem;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+
+
+        &:hover,
+        &:focus {
+            background-color: $Kombat-Blue;
+            color: $Kombat-Beige;
+            outline: none;
+        }
+    }
+
+    &__join{
+        width: 165px;
+        height: 35px;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $Kombat-DarkBlue;
+        color: $Kombat-LightBlue;
+        border-radius: 0.25rem;
+        padding: 0.5rem 1rem;
+        text-decoration: none;
+
+
+        &:hover,
+        &:focus {
+            background-color: $Kombat-Blue;
+            color: $Kombat-Beige;
+            outline: none;
+        }
+    }
+}
