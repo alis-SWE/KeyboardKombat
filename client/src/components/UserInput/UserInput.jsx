@@ -28,12 +28,15 @@ const UserInput = ({ isOpen, isOver, kombatID }) => {
         }
     }
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+    }
+
     return ( 
         <div className="user-input">
-            <form className="user-input__form">
+            <form className="user-input__form" onSubmit={handleSubmit}>
                 <div className="user-input__form__group">
                     <input type="text" className="user-input__form__group__input" readOnly={isOpen || isOver} onChange={handleChange} value={userInput} ref={textInput}/>
-
                 </div>
             </form>
         </div>
