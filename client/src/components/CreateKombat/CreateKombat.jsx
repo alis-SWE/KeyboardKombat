@@ -25,10 +25,10 @@ const CreateKombat = () => {
                 </div>
                 <div className="create__form__button">
                     <button className="create__form__button__create" type="submit">
-                        CREATE KOMBAT
+                        Create Kombat
                     </button>
                     <Link className="create__form__button__cancel" to={'/kombat'}>
-                        CANCEL
+                        Cancel
                     </Link>
                 </div>
             </form>
