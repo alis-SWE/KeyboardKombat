@@ -1,4 +1,4 @@
-import './Practice.scss';
+import './KeyboardKombat.scss';
 import socket from '../../socketConfig';
 import { useNavigate } from 'react-router-dom';
 import StartButton from '../../components/StartButton/StartButton';
@@ -11,21 +11,20 @@ const findPlayer = (players) => {
     return players.find(player => player.socketID === socket.id);
 }
 
-const Practice = ({ kombatState }) => {
+const KeyboardKombat = ({ kombatState }) => {
     const navigate = useNavigate();
     const {_id, text, isOpen, isOver, players} = kombatState;
     const player = findPlayer(players);
-    
 
     console.log("Kombat State",kombatState);
 
 
     if (_id === "") {
-        navigate("/");
+        navigate("/kombat");
     }
+
     return ( 
-        <div className="practice">
-            <h2 className="practice__header">Practice</h2>
+        <div className="keyboard-kombat">
             <Timer />
             <ShowText text={text} player={player} />
             <UserInput isOpen={isOpen} isOver={isOver} kombatID={_id}/>
@@ -34,5 +33,5 @@ const Practice = ({ kombatState }) => {
         </div>
      );
 }
- 
-export default Practice;
+
+export default KeyboardKombat;

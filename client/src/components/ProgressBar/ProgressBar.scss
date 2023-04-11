@@ -1,0 +1,36 @@
+@import "/src/styles/partials/variables";
+@import "/src/styles/partials/mixins";
+@import "/src/styles/partials/global";
+@import "/src/styles/partials/typography";
+
+.progressbar {
+    &__player {
+        &__player-name {
+            margin-bottom: 0rem;
+            display: flex;
+            font-size: 1rem;
+            color: $Kombat-Beige;
+            margin-left: 0.2rem;
+        }
+        &__bar {
+            width: 100%;
+            border: 2px solid $Kombat-DarkBlue;
+            border-radius: 0.25rem;
+            
+            &__progress {
+                background-color: $Kombat-Blue;
+                text-align: center;
+                font-size: 1rem;
+                font-family: inherit;
+                color: $Kombat-Beige;
+            }
+        }
+        
+        &__wpm {
+            margin-top: 0rem;
+            font-size: 1rem;
+        }
+    }
+
+    
+}

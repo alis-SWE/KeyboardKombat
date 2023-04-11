@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const PlayerSchema = new Schema({
+const playerSchema = new Schema({
     name: {
         type: String,
         required: true
@@ -24,7 +24,7 @@ const PlayerSchema = new Schema({
     }
 });
 
-const GameSchema = new Schema({
+const kombatSchema = new Schema({
     text: [{type: String}],
     isOpen: {
         type: Boolean,
@@ -34,9 +34,8 @@ const GameSchema = new Schema({
         type: Boolean,
         default: false
     },
-    players: [PlayerSchema],
+    players: [playerSchema],
     startTime: {type: Number}
+});
 
-}, { timestamps: true });
-
-module.exports = mongoose.model('Game', GameSchema);
+module.exports = mongoose.model('Kombat', kombatSchema);

@@ -1,0 +1,29 @@
+@import "/src/styles/partials/variables";
+@import "/src/styles/partials/mixins";
+@import "/src/styles/partials/global";
+@import "/src/styles/partials/typography";
+
+.start-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    background-color: $Kombat-DarkBlue;
+    width: 200px;
+    height: 45px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 0.25rem;
+    color: $Kombat-LightBlue;
+
+    &:hover,
+    &:focus {
+        background-color: $Kombat-Blue;
+        color: $Kombat-Beige;
+        outline: none;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,30 @@
+@import "/src/styles/partials/variables";
+@import "/src/styles/partials/mixins";
+@import "/src/styles/partials/global";
+@import "/src/styles/partials/typography";
+
+.user-input {
+    display: flex;
+    margin-top: 1.5rem;
+    justify-content: center;
+    &__form {
+        &__group {
+            &__input {
+                width: 335px;
+                border: 2px solid $Kombat-DarkBlue;
+                outline: none;
+                border-radius: 5px;
+                background-color: $Kombat-BackgroundColor;
+                color: $Kombat-Beige;
+                font-size: 1.2rem;
+                font-family: inherit;
+
+                &:focus {
+                    border: 2px solid $Kombat-Blue;
+                    outline: none;
+                    // border-color: rgb(26, 137, 216);
+                }
+            }
+        }
+    }
+}
