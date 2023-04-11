@@ -1,0 +1,37 @@
+@import "/src/styles/partials/variables";
+@import "/src/styles/partials/mixins";
+@import "/src/styles/partials/global";
+@import "/src/styles/partials/typography";
+
+
+.header {
+    width: 100%;
+    display: flex;
+    // flex-direction: row;
+    // flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    &__logo-link{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        
+        &__button {
+            width: 5rem;
+        }
+    }
+
+    &__title {
+        justify-content: center;
+        align-items: center;
+        margin: 0rem;
+        margin-left: 0.5rem;
+        color: $Kombat-Beige;
+        text-decoration: none;
+        outline: none;
+    }
+
+
+}
