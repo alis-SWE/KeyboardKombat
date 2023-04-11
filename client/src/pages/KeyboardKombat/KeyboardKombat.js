@@ -27,11 +27,11 @@ const KeyboardKombat = ({ kombatState }) => {
         <div className="keyboard-kombat">
             <Timer />
             <ShowText text={text} player={player} />
-            <ProgressBar players={players} player={player} textLength={text.length}/>
             <UserInput isOpen={isOpen} isOver={isOver} kombatID={_id}/>
+            <ProgressBar players={players} player={player} textLength={text.length}/>
             <StartButton player={player} kombatID={_id} />
         </div>
      );
 }
- 
+
 export default KeyboardKombat;
