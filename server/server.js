@@ -45,7 +45,9 @@ const db = mongoose.connection;
 const books = db.model('Book', new mongoose.Schema({book: String, author: String, text: String}), 'book_texts');
 const movies = db.model('Movie', new mongoose.Schema({movie: String, director: String, text: String}), 'movie_texts');
 
-const getText = async (req, res) => {
+let text;
+
+const getText = async () => {
     let randomCollection = Math.floor(Math.random() * 10);
     let randomSkip = Math.floor(Math.random() * 25);
 
@@ -61,9 +63,8 @@ const getText = async (req, res) => {
         console.log(book, randomCollection, randomSkip, text);
     }
 
+    return text;
 }
-
-let text;
 
 io.on('connect', (socket) => {
     socket.on('userInput', async ({ userInput, kombatID }) => {
@@ -101,7 +102,7 @@ io.on('connect', (socket) => {
         if(player.host) {
             let timerID = setInterval( async () => {
                 if(timer >= 0) {
-                    io.to(kombatID).emit('timer', {timer, msg: 'Starting Kombat'});
+                    io.to(kombatID).emit('timer', {timer, msg: 'Starting Kombat: '});
                     timer--;
                 }
                 else {
@@ -130,14 +131,14 @@ io.on('connect', (socket) => {
                 io.to(kombatID).emit('updateKombat', kombat);
             }
         }
-        catch {
+        catch (err) {
             console.log(err);
         }
     });
 
     socket.on('create-kombat', async (name) => {
+        await getText();
         try {
-            getText();
             let kombat = new Kombat();
             kombat.text = text;
             let player = {
@@ -152,7 +153,7 @@ io.on('connect', (socket) => {
             socket.join(kombatID);
             io.to(kombatID).emit('updateKombat', kombat);
         }
-        catch {
+        catch (err) {
             console.log(err);
         }
     });
@@ -162,10 +163,10 @@ const startTimer = async (kombatID) => {
     let kombat = await Kombat.findById(kombatID);
     kombat.startTime = new Date().getTime();
     kombat = await kombat.save();
-    let time = 30;
+    let time = 60;
     let timerID = setInterval(function kombatInterval() {
         if(time >= 0) {
-            io.to(kombatID).emit('timer', {timer: time, msg: "Time Remaining"});
+            io.to(kombatID).emit('timer', {timer: time, msg: "Time Remaining: "});
             time--; 
         }
         else {
