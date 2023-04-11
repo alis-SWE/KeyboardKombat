@@ -7,11 +7,6 @@ const Kombat = require('./models/Kombat');
 const PORT = process.env.PORT;
 const MONGO_URI = process.env.MONGO_URI;
 
-const homeRoutes = require('./routes/home');
-const practiceRoutes = require('./routes/practice');
-const kombatRoutes = require('./routes/kombat');
-
-
 //express
 const app = express();
 
@@ -27,10 +22,6 @@ app.use((req, res, next) => {
     console.log(req.path, req.method);
     next()
 });
-
-app.use('/', homeRoutes);
-app.use('/practice', practiceRoutes);
-app.use('/kombat', kombatRoutes);
 
 //connect to db
 mongoose.connect(MONGO_URI)
@@ -84,7 +75,6 @@ io.on('connect', (socket) => {
                         let { startTime } = kombat;
                         player.wordsPerMinute = calculateWordsPerMinute(endTime, startTime, player);
                         kombat = await kombat.save();
-                        socket.emit('done');
                         io.to(kombatID).emit('updateKombat', kombat);
                     }
                 }

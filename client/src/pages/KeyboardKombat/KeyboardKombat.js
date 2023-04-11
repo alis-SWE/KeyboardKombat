@@ -6,6 +6,8 @@ import Timer from '../../components/Timer/Timer';
 import ShowText from '../../components/ShowText/ShowText';
 import UserInput from '../../components/UserInput/UserInput';
 import ProgressBar from '../../components/ProgressBar/Progressbar';
+import ScoreBoard from '../../components/ScoreBoard/ScoreBoard';
+import KombatCode from '../../components/KombatCode/KombatCode';
 
 const findPlayer = (players) => {
     return players.find(player => player.socketID === socket.id);
@@ -30,6 +32,8 @@ const KeyboardKombat = ({ kombatState }) => {
             <UserInput isOpen={isOpen} isOver={isOver} kombatID={_id}/>
             <ProgressBar players={players} player={player} textLength={text.length}/>
             <StartButton player={player} kombatID={_id} />
+            <KombatCode kombatID={_id} />
+            <ScoreBoard players={players} />
         </div>
      );
 }

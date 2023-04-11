@@ -8,11 +8,9 @@ const Timer = () => {
         socket.on('timer', (data) => {
             setTimer(data);
         });
-        socket.on('done', () => {
-            socket.removeListener('timer');
-        });
+
     }, []);
-    // const {countDown, msg} = timer;
+
     return ( 
         <div className="timer">
             <h2 className="timer__msg">{timer.msg}</h2>

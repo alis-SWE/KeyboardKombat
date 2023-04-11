@@ -8,12 +8,10 @@
     font-size: 1.2rem;
 
     &__typed-correctly {
-        // color: rgb(252, 234, 213);
         color: $Kombat-Blue;
     }
 
     &__current {
-        // color: rgb(26, 137, 216);
         color: $Kombat-Beige;
         text-decoration: underline;
     }
