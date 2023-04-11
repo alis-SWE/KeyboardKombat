@@ -1,15 +1,13 @@
 import './ProgressBar.scss';
 
-const calcPercentage = (player, textLength) => {
-    if(player.wordIndex !== 0) {
-        return Math.floor((player.wordIndex / textLength) * 100)
-    }
-    return 0;
-}
-
-
-
 const ProgressBar = ({ players, player, textLength }) => {
+    const calcPercentage = (player, textLength) => {
+        if(player.wordIndex !== 0) {
+            return Math.floor((player.wordIndex / textLength) * 100)
+        }
+        return 0;
+    }
+
     const percentage = calcPercentage(player, textLength);
 
     return ( 
@@ -19,7 +17,7 @@ const ProgressBar = ({ players, player, textLength }) => {
                 <div className="progressbar__player__bar" key={player._id}>
                     <div className="progressbar__player__bar__progress" style={{width: percentage + '%'}}>{percentage + '%'}</div>
                 </div>
-                <p className="progressbar__player__wpm">{player.wordsPerMinute + " WPM"}</p>
+                {player.wordsPerMinute !== -1 ? <p className="progressbar__player__wpm">{player.wordsPerMinute + " WPM"}</p> : <p className="progressbar__player__wpm">0 WPM</p>}
             </div>
             
 
@@ -32,7 +30,7 @@ const ProgressBar = ({ players, player, textLength }) => {
                         <div className="progressbar__player__bar" key={playerObj._id}>
                             <div className="progressbar__player__bar__progress" style={{width: percentage + '%'}}>{percentage + '%'}</div>
                         </div>
-                        <p className="progressbar__player__wpm">{playerObj.wordsPerMinute + " WPM"}</p>
+                        {playerObj.wordsPerMinute !== -1 ? <p className="progressbar__player__wpm">{playerObj.wordsPerMinute + " WPM"}</p> : <p className="progressbar__player__wpm">0 WPM</p>}
                     </div> : null
                 })
             }
