@@ -1,12 +1,20 @@
 @import "/src/styles/partials/variables";
 @import "/src/styles/partials/mixins";
+@import "/src/styles/partials/global";
+@import "/src/styles/partials/typography";
 
 .text {
+    color: $Kombat-LightBlue;
+    font-size: 1.2rem;
+
     &__typed-correctly {
-        background-color: rgb(0, 255, 0);
+        // color: rgb(252, 234, 213);
+        color: $Kombat-Blue;
     }
 
     &__current {
+        // color: rgb(26, 137, 216);
+        color: $Kombat-Beige;
         text-decoration: underline;
     }
 }
