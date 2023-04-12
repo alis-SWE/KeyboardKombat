@@ -29,7 +29,7 @@ Clone this repository and navigate to the project directory:
 
 ```bash
 git clone https://github.com/alis-SWE/KeyboardKombat.git
-cd keyboardkombat
+cd keyboardkombat-main
 ```
 
 Build the server-side and start the server:
@@ -46,7 +46,6 @@ Build the client-side React application:
 cd client
 npm install
 npm start
-cd ..
 ```
 
 The server will start running at **'http://localhost:3000'**. Open your web browser and visit this URL to start playing!
