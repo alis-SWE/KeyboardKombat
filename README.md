@@ -29,7 +29,7 @@ Clone this repository and navigate to the project directory:
 
 ```bash
 git clone https://github.com/alis-SWE/KeyboardKombat.git
-cd keyboardkombat-main
+cd keyboardkombat
 ```
 
 Build the server-side and start the server:
