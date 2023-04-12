@@ -38,10 +38,12 @@ Install the required dependencies:
 npm install
 ```
 
-Create a .env file in the project root and add your MongoDB URI and JWT secret key:
+Build the server-side and start the server:
 
 ```bash
-MONGODB_URI=<your-mongodb-uri>
+cd server
+npm install
+npm run dev
 ```
 
 Build the client-side React application:
@@ -51,14 +53,6 @@ cd client
 npm install
 npm start
 cd ..
-```
-
-Build the server-side and start the server:
-
-```bash
-cd server
-npm install
-npm run dev
 ```
 
 The server will start running at **'http://localhost:3000'**. Open your web browser and visit this URL to start playing!
