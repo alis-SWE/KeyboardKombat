@@ -1,6 +1,6 @@
 # KeyboardKombat
 
-![KeyboardKombat Logo](./keyboardkombat/src/assets/logo/KeyboardKombatLogo.svg)
+![KeyboardKombat Logo](./client/src/assets/logo/KeyboardKombatLogo.svg)
 
 KeyboardKombat is a fun, real-time, multiplayer typing game that helps users improve their typing speed and accuracy. Built using the MERN stack (MongoDB, Express, React, and Node.js), the game also incorporates Socket.IO for seamless real-time communication between players.
 
